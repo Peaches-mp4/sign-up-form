@@ -45,6 +45,13 @@ body {
     display: flex;
 }
 
+body {
+    font-size: 0.9rem;
+    font-family: 'Raleway', sans-serif; ;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
 a {
     text-decoration: none;
 }
@@ -83,4 +90,8 @@ a {
     align-self: center;
     font-size: 0.4rem;
     padding: 1rem;
+}
+
+#pitch-wrapper {
+    padding: 5rem 3rem;
 }
