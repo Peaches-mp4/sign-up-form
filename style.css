@@ -65,18 +65,22 @@ a {
 }
 
 #logo-wrap {
-    font-family: 'Arizonia', cursive;  background-color: rgba(0, 0, 0, 0.829);
+    font-family: 'Arizonia', cursive;  background-color: rgba(0, 0, 0, 0.637);
     font-size: 5rem;
     display: flex;
     align-items: center;
+    margin-top: auto;
+    padding: 1rem 3rem;
 }
 
 #logo-img {
-    width: 50px;
+    width: 30px;
     height: auto;
 }
 
 #credit-wrap {
-    background-color: orange;
-    justify-self: flex-end;
+    margin-top: auto;
+    align-self: center;
+    font-size: 0.4rem;
+    padding: 1rem;
 }
