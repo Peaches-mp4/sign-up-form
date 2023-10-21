@@ -60,7 +60,7 @@ a {
     background-image: url(/images/daniel-olah-YNUFtf4qyh0-unsplash.jpg);
     background-size: cover;
     height: 100vh;
-    width: auto;
+    width: 33vw;
     color: white;
     display: flex;
     flex-direction: column;
@@ -93,7 +93,7 @@ a {
 }
 
 #pitch-wrapper {
-    padding: 3.5rem 3rem 1.2rem 3rem;
+    padding: 3.5rem 3rem 1rem 3rem;
 }
 
 /* Form styling */
@@ -115,6 +115,7 @@ form {
 legend {
     padding-bottom: 0.5rem;
     font-weight: 500;
+    font-size: 1.1rem;
 }
 
 .form-div {
@@ -154,6 +155,14 @@ input[type="password"]:invalid {
     border: 1px solid rgb(255, 60, 0);
 }
 
+#pass-match {
+    font-size: 0.6rem;
+    font-weight: 500;
+    margin-top: -10px;
+    color: rgb(255, 60, 0);
+}
+
+
 button {
     margin: 1rem 0 1rem 0.5rem;
     padding: 0.7rem 2.5rem;
@@ -168,4 +177,13 @@ button {
 button:hover {
     background-color: rgb(5, 82, 182);
     transform: scale(1.05);
+}
+
+.error {
+    border: 1px solid rgb(255, 60, 0);
+    background-color: rgba(255, 60, 0, 0.219);
+}
+
+.success {
+    border: 1px solid green ;
 }
