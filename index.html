@@ -30,24 +30,31 @@
         </div>
         <div id="form-wrapper">
             <form action="" method="get">
-                <fieldset>
+                <fieldset id="form-inputs">
                     <legend>Please fill out the form:</legend>
-                    <label for="name">Name</label>
-                    <input type="text" name="name" id="name">
-                    <label for="username">Username</label>
-                    <input type="text" name="username" id="username">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email">
-                    <label for="tel">Telephone number</label>
-                    <input type="tel" name="tel" id="tel">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password">
-                    <label for="password-confirm">Confirm password</label>
-                    <input type="password" name="password-confirm" id="password-confirm">
+                    
+                    <div class="form-div">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email">
+                    </div>
+                    <div class="form-div">
+                        <label for="tel">Telephone number</label>
+                        <input type="tel" name="tel" id="tel">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password">
+                        <label for="password-confirm">Confirm password</label>
+                        <input type="password" name="password-confirm" id="password-confirm">
+                    </div>
                 </fieldset>
-                <button>Create Account</button>
-                <p id="login">Already have an account?<a href="">Log in</a>
-                </p>
+                <div id="submit-div">
+                    <button>Create Account</button>
+                    <p id="login">Already have an account?<a href="">Log in</a>
+                    </p>
+                </div>
             </form>
         </div>
     </div>
