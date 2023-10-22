@@ -35,21 +35,26 @@
                     <legend>Please fill out the form:</legend>
                     
                     <div class="form-div">
-                        <label for="name">Name</label>
+                        <label for="name">Name*</label>
                         <input type="text" name="name" id="name" required>
-                        <label for="tel">Telephone number</label>
-                        <input type="tel" name="tel" id="tel">
-                        <label for="password">Password</label>
-                        <input type="password" name="password" id="password">
-                        <p id="pass-match"></p>
-                    </div>
-                    <div class="form-div">
+                        <p class="warning hidden required">This field is required</p>
                         <label for="username">Username</label>
                         <input type="text" name="username" id="username">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email">
-                        <label for="password-confirm">Confirm password</label>
-                        <input type="password" name="password-confirm" id="password-confirm">
+                        <label for="password">Password*</label>
+                        <input type="password" name="password" id="password" required>
+                        <p class="warning hidden" id="pass-match">Passwords don't match</p>
+                        <p class="warning hidden required">This field is required</p>
+                    </div>
+                    <div class="form-div">
+                        <label for="email">Email*</label>
+                   
+                        <input type="email" name="email" id="email" required>
+                        <p class="warning hidden required">This field is required</p>
+                        <label for="tel">Telephone number</label>
+                        <input type="tel" name="tel" id="tel">
+                        <label for="password-confirm">Confirm password*</label>
+                        <input type="password" name="password-confirm" id="password-confirm" required>
+                        <p class="warning hidden required">This field is required</p>
                     </div>
                 </fieldset>
                 <div id="submit-div">
