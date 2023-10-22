@@ -14,9 +14,13 @@ function checkPass(e) {
 
 function isSame() {
    if (passConfirm.value !== pass.value) {
-    // passMatch.innerText = "*Passwords don't match";
+    passMatch.innerText = "Passwords don't match";
     passMatch.classList.remove('hidden');
+
+    pass.classList.remove('success');
     pass.classList.add('error');
+
+    passConfirm.style.backgroundColor = 'yellow';
     passConfirm.classList.add('error');
     }
 }
@@ -25,16 +29,27 @@ checkPass();
 
 // functions for invalid inputs
 
-inputs.forEach(input => input.addEventListener('blur', setInvalid));
+inputs.forEach(input => input.addEventListener('blur', isValid));
 
-function setInvalid(e) {
-    if(e.target.checkValidity() == false) {
-        e.target.classList.add('error');}
-    if(!e.target.value ) {
-        // Array.from(required).forEach(item => item.classList.remove('hidden'));
-        let precise = e.target.nextElementSibling;
-        precise.classList.remove('hidden');
+function isValid(e) {
+    if(e.target.checkValidity() == true) {
+
+        if(e.target.value) {
+            e.target.classList.remove('error');
+            e.target.classList.add('success');
+            e.target.nextElementSibling.classList.add('hidden');
+        } else {
+            return;
+        }
+
+    } else {
+
+        e.target.classList.add('error');
+        if(!e.target.value ) {
+            e.target.nextElementSibling.classList.remove('hidden');}
+        
     }
+
 }
 
 /* 
