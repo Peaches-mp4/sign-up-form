@@ -1,33 +1,12 @@
 // variables
 
-const pass = document.getElementById("password");
-const passConfirm = document.getElementById("password-confirm");
+
+const inputs = document.querySelectorAll("input[type='text'], input[type='email'], input[type='tel']");
 const passMatch = document.getElementById("pass-match")
-const inputs = document.querySelectorAll("input");
-// const required = document.getElementsByClassName('required');
+const passwords = Array.from(document.querySelectorAll("input[type='password']"));
 
-// functions for pass validation
 
-function checkPass(e) {
-    passConfirm.addEventListener('blur', isSame)
-}
-
-function isSame() {
-   if (passConfirm.value !== pass.value) {
-    passMatch.innerText = "Passwords don't match";
-    passMatch.classList.remove('hidden');
-
-    pass.classList.remove('success');
-    pass.classList.add('error');
-
-    passConfirm.style.backgroundColor = 'yellow';
-    passConfirm.classList.add('error');
-    }
-}
-
-checkPass();
-
-// functions for invalid inputs
+// signaling valid/invalid for non-pass inputs
 
 inputs.forEach(input => input.addEventListener('blur', isValid));
 
@@ -40,48 +19,67 @@ function isValid(e) {
             e.target.classList.add('success');
             e.target.previousElementSibling.children[0].classList.remove('hidden');
 
-            if(e.target.nextElementSibling.classList.contains('required')) {
-                e.target.nextElementSibling.classList.add('hidden');
-            }
         } else {
             e.target.classList.remove('success');
+            e.target.previousElementSibling.children[0].classList.add('hidden');
         }
 
     } else {
 
         e.target.classList.add('error');
         e.target.classList.remove('success');
-
-
-        if(!e.target.value ) {
-            e.target.nextElementSibling.classList.remove('hidden');
-            e.target.nextElementSibling.classList.add('warning')};
-        
+        e.target.previousElementSibling.children[0].classList.add('hidden');
     }
-
 }
+
+//signaling required
+
+document.querySelectorAll('input').forEach(input => input.addEventListener('blur', isRequired));
+
+function isRequired(e) {
+    if(!e.target.value && e.target.checkValidity() == false) {
+        e.target.nextElementSibling.classList.remove('hidden');
+        e.target.nextElementSibling.classList.add('warning');
+        e.target.classList.add('error');
+    } else if (e.target.value && e.target.nextElementSibling.classList.contains('required')) {
+        e.target.nextElementSibling.classList.add('hidden');
+    }
+}
+
+// pass validation
+
+passwords.forEach(pass => pass.addEventListener('keyup', isSame))
+
+function isSame(e) {
+
+     if (passwords[0].value == passwords[1].value) {
+     passMatch.classList.add('hidden');
+
+     passwords.forEach(pass => pass.classList.add('success'));  
+     passwords.forEach(pass => pass.classList.remove('error'));   
+     passwords.forEach(pass => pass.previousElementSibling.children[0].classList.remove('hidden'))
+    
+    } else {
+
+     passMatch.innerText = "Passwords don't match";
+     passMatch.classList.remove('hidden');
+     passMatch.classList.add('warning');
+
+     passwords.forEach(pass => pass.classList.remove('success'));
+     passwords.forEach(pass => pass.classList.add('error'));
+     passwords.forEach(pass => pass.previousElementSibling.children[0].classList.add('hidden'));
+    }
+ }
+
 
 /* 
 
-*"this field is optional" poruka je malo ugly:
-1) povecati razmak izmedju fields
-
-2) ostaviti prazne p umesto poruke jer je potrebno da postoji neki element zbog drugog dela koda
-
-3) promeniti logiku tako da se u kodu ne dodaje hidden clas next sibling elementu ako je e.target an optional field
-
-4) aria-describedby?
-
-5) a da samo stavim req i optional odmah pored input labels? umesto ispod?
+*aria-describedby?
 
 *dodati validaciju za username i phone number - mozda se za to mogu iskoristiti this field is optional paragrafi? za poruke tipa 'pls username duzi od 2 slova' itd
 
-*pass confirmation: 
-    1) ne uspevam da dodam error class i sklonim success class sa Confirm password inputa kada funkcija skonta da passes don't match; sa druge strane mogu da menjam style etc, tako da izgleda da je targetovan element kako treba
-
-    2) ako dodam slovo viska inputu za password confirmation (pass1 = ar, pass2 = arr) okidanje errora radi kako treba. medjutim kada obrisem i ponovo iskucam pass confirmation, ovaj put da matchuje originalni password, ne revalidetuje se matching, ostaju mi primenjene error classes
-
-
 *limiti za css da se ne bi breakovao design pri resize
+
+*raspored fields pri resize
 
  */
