@@ -60,7 +60,7 @@ a {
     background-image: url(/images/daniel-olah-YNUFtf4qyh0-unsplash.jpg);
     background-size: cover;
     height: 100vh;
-    width: 33vw;
+    width: 40vw;
     color: white;
     display: flex;
     flex-direction: column;
@@ -135,12 +135,12 @@ legend {
 }
 
 label {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
 input {
-    margin: 0 0.3rem 0.8rem 0;
-    height: 1.6rem;
+    margin: 0 0.3rem 1.5rem 0;
+    height: 1.7rem;
     border: 1px solid rgb(218, 211, 211);
     border-radius: 7px;
 }
@@ -152,10 +152,25 @@ input:focus-visible {
 }
 
 .warning {
-    font-size: 0.6rem;
-    font-weight: 500;
-    margin-top: -10px;
     color: rgb(255, 60, 0);
+    font-weight: 500;
+
+}
+
+.required {
+    font-size: 0.55rem;
+    margin-top: -1.2rem;
+    }
+
+.label-wrapper {
+    position: absolute;
+}
+
+.checked {
+    font-size: 1.3rem;
+    color: rgb(68, 194, 68);
+    position: relative;
+    left: 10rem;
 }
 
 .hidden {
@@ -179,9 +194,18 @@ button:hover {
 
 .error {
     border: 1px solid rgb(255, 60, 0);
-    background-color: rgba(255, 60, 0, 0.219);
+    background-color: rgba(255, 60, 0, 0.13);
 }
 
 .success {
-    border: 1px solid green ;
+    border: 1px solid rgb(68, 194, 68);
 }
+
+input:valid {
+    appearance: none;
+    background-color: white;
+}
+
+
+
+

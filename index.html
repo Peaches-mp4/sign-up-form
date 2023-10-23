@@ -35,26 +35,40 @@
                     <legend>Please fill out the form:</legend>
                     
                     <div class="form-div">
-                        <label for="name">Name*</label>
+                        <label for="name">Name
+                            <div class="label-wrapper hidden"><span class="checked">✓</span></div>
+                        </label>
                         <input type="text" name="name" id="name" required>
-                        <p class="warning hidden required">This field is required</p>
-                        <label for="username">Username (optional)</label>
+                        <p class="required hidden">Required</p>
+
+                        <label for="username">Username
+                            <div class="label-wrapper hidden"><span class="checked">✓</span></div>
+                        </label>
                         <input type="text" name="username" id="username">
-                        <label for="password">Password*</label>
+                        <!-- <p class="required hidden">Optional</p> -->
+                        
+                        <label for="password">Password
+                            <div class="label-wrapper hidden"><span class="checked">✓</span></div>
+                        </label>
                         <input type="password" name="password" id="password" required>
-                        <p class="warning hidden required" id="pass-match">This field is required</p>
-                        <!-- <p class="warning hidden" id="pass-match">Passwords don't match</p> -->
+                        <p class="required hidden" id="pass-match">Required</p>
                     </div>
                     <div class="form-div">
-                        <label for="email">Email*</label>
-                   
+                        <label for="email">Email
+                            <div class="label-wrapper hidden"><span class="checked">✓</span></div>
+                        </label>
                         <input type="email" name="email" id="email" required>
-                        <p class="warning hidden required">This field is required</p>
-                        <label for="tel">Telephone number (optional)</label>
+                        <p class="required hidden">Required</p>
+                        <label for="tel">Telephone number
+                            <div class="label-wrapper hidden"><span class="checked">✓</span></div>
+                        </label>
                         <input type="tel" name="tel" id="tel">
-                        <label for="password-confirm">Confirm password*</label>
+                        <!-- <p class="required hidden">Optional</p> -->
+                        <label for="password-confirm">Confirm password
+                            <div class="label-wrapper hidden"><span class="checked">✓</span></div>
+                        </label>
                         <input type="password" name="password-confirm" id="password-confirm" required>
-                        <p class="warning hidden required">This field is required</p>
+                        <p class="required hidden">Required</p>
                     </div>
                 </fieldset>
                 <div id="submit-div">
