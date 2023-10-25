@@ -52,7 +52,7 @@ passwords.forEach(pass => pass.addEventListener('keyup', isSame))
 
 function isSame(e) {
 
-     if (passwords[0].value == passwords[1].value) {
+     if (passwords[0].value == passwords[1].value && passwords[0].value) {
      passMatch.classList.add('hidden');
 
      passwords.forEach(pass => pass.classList.add('success'));  
@@ -78,8 +78,5 @@ function isSame(e) {
 
 *dodati validaciju za username i phone number - mozda se za to mogu iskoristiti this field is optional paragrafi? za poruke tipa 'pls username duzi od 2 slova' itd
 
-*limiti za css da se ne bi breakovao design pri resize
-
-*raspored fields pri resize
 
  */
